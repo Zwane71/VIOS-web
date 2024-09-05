@@ -1,14 +1,15 @@
 "use client";
-import { UserButton } from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState } from "react";
+import { SignIn } from "@clerk/nextjs";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
 		<nav className=''>
-			<div className=' top-0 absolute container mx-14 flex items-center justify-between  outline-dotted p-4 outline-stone-700 '>
+			<div className=' top-0 absolute container mx-14 flex items-center justify-between   p-4  '>
 				<span className=' text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-inter font-light text-black'>
 					VIOS
 				</span>
@@ -18,16 +19,18 @@ const Navbar = () => {
 						className='text-2xl font-inter text-black hover:text-gray-700'>
 						Home
 					</Link>
-					<Link
-						href='dashboard'
-						className='text-2xl font-inter text-black hover:text-gray-700'>
-						Dashboard
-					</Link>
-					<Link
-						href='/'
-						className='text-2xl font-inter text-black hover:text-gray-700'>
-						Profile
-					</Link>
+					<SignedIn>
+						<Link
+							href='dashboard'
+							className='text-2xl font-inter text-black hover:text-gray-700'>
+							Dashboard
+						</Link>
+						<Link
+							href='/'
+							className='text-2xl font-inter text-black hover:text-gray-700'>
+							Profile
+						</Link>
+					</SignedIn>
 					<Link
 						href='about-us'
 						className='text-2xl font-inter text-black hover:text-gray-700'>
