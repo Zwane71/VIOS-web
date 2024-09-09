@@ -1,9 +1,11 @@
 "use client";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, SignedIn, useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState } from "react";
 
 const Navbar = () => {
+	const user = useAuth();
+
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
@@ -12,22 +14,25 @@ const Navbar = () => {
 				<span className=' text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-inter font-light text-black'>
 					VIOS
 				</span>
+
 				<div className='hidden md:flex space-x-9'>
 					<Link
 						href='/'
 						className='text-2xl font-inter text-black hover:text-gray-700'>
 						Home
 					</Link>
-					<Link
-						href='dashboard'
-						className='text-2xl font-inter text-black hover:text-gray-700'>
-						Dashboard
-					</Link>
-					<Link
-						href='/'
-						className='text-2xl font-inter text-black hover:text-gray-700'>
-						Profile
-					</Link>
+					<SignedIn>
+						<Link
+							href='dashboard'
+							className='text-2xl font-inter text-black hover:text-gray-700'>
+							Dashboard
+						</Link>
+						<Link
+							href='/'
+							className='text-2xl font-inter text-black hover:text-gray-700'>
+							Profile
+						</Link>
+					</SignedIn>
 					<Link
 						href='about-us'
 						className='text-2xl font-inter text-black hover:text-gray-700'>
@@ -36,9 +41,11 @@ const Navbar = () => {
 					<Link
 						href='contact-us'
 						className='text-2xl font-inter text-black hover:text-gray-700'>
-						Contact Us
+						Contact
 					</Link>
+					<UserButton />
 				</div>
+
 				<button
 					className='md:hidden text-black focus:outline-none'
 					onClick={() => setIsMenuOpen(!isMenuOpen)}>
