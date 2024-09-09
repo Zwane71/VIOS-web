@@ -1,7 +1,10 @@
 import { UserButton } from "@clerk/nextjs";
-import React from "react";
+import React, { FC, ReactNode } from "react";
 
-const Dashboardlayout = ({ children }) => {
+interface DashboardlayoutProps {
+	children: ReactNode;
+}
+const Dashboardlayout = ({ children }: DashboardlayoutProps) => {
 	return <div>{children}</div>;
 };
 
