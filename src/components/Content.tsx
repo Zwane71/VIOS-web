@@ -23,15 +23,15 @@ export default function Content() {
 					</div>
 
 					<div className='relative mt-20 '>
-						<div className=' w-56 h-16 bg-pink-300 bg-opacity-50 rounded-full flex items-center justify-center  '>
-							<SignedOut>
+						<SignedOut>
+							<div className=' w-56 h-16 bg-pink-300 bg-opacity-50 rounded-full flex items-center justify-center  '>
 								<Link
 									href={"/sign-in"}
 									className=' text-2xl font-inter text-black'>
 									Sign In
 								</Link>
-							</SignedOut>
-						</div>
+							</div>
+						</SignedOut>
 					</div>
 				</div>
 
