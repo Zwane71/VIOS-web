@@ -1,18 +1,29 @@
 "use client";
+<<<<<<< HEAD
 import { SignedIn, UserButton } from "@clerk/nextjs";
+=======
+import { UserButton, SignedIn, useAuth } from "@clerk/nextjs";
+>>>>>>> abd2f0baa1c75e678de640bf75affde95b7043ba
 import Link from "next/link";
 import { useState } from "react";
 import { SignIn } from "@clerk/nextjs";
 
 const Navbar = () => {
+	const user = useAuth();
+
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
 		<nav className=''>
+<<<<<<< HEAD
 			<div className=' top-0 absolute container mx-14 flex items-center justify-between   p-4  '>
+=======
+			<div className=' top-0 absolute container mx-14 flex items-center justify-between p-4  '>
+>>>>>>> abd2f0baa1c75e678de640bf75affde95b7043ba
 				<span className=' text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-inter font-light text-black'>
 					VIOS
 				</span>
+
 				<div className='hidden md:flex space-x-9'>
 					<Link
 						href='/'
@@ -39,9 +50,11 @@ const Navbar = () => {
 					<Link
 						href='contact-us'
 						className='text-2xl font-inter text-black hover:text-gray-700'>
-						Contact Us
+						Contact
 					</Link>
+					<UserButton />
 				</div>
+
 				<button
 					className='md:hidden text-black focus:outline-none'
 					onClick={() => setIsMenuOpen(!isMenuOpen)}>
