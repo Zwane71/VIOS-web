@@ -15,11 +15,7 @@ const Navbar = () => {
 
 	return (
 		<nav className=''>
-<<<<<<< HEAD
 			<div className=' top-0 absolute container mx-14 flex items-center justify-between   p-4  '>
-=======
-			<div className=' top-0 absolute container mx-14 flex items-center justify-between p-4  '>
->>>>>>> abd2f0baa1c75e678de640bf75affde95b7043ba
 				<span className=' text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-inter font-light text-black'>
 					VIOS
 				</span>
