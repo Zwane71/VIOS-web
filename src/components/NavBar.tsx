@@ -1,9 +1,5 @@
 "use client";
-<<<<<<< HEAD
-import { SignedIn, UserButton } from "@clerk/nextjs";
-=======
-import { UserButton, SignedIn, useAuth } from "@clerk/nextjs";
->>>>>>> abd2f0baa1c75e678de640bf75affde95b7043ba
+import { SignedIn, useAuth, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState } from "react";
 import { SignIn } from "@clerk/nextjs";

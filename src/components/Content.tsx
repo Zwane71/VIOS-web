@@ -1,3 +1,4 @@
+import { SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,11 +24,13 @@ export default function Content() {
 
 					<div className='relative mt-20 '>
 						<div className=' w-56 h-16 bg-pink-300 bg-opacity-50 rounded-full flex items-center justify-center  '>
-							<Link
-								href={"/sign-in"}
-								className=' text-2xl font-inter text-black'>
-								Sign In
-							</Link>
+							<SignedOut>
+								<Link
+									href={"/sign-in"}
+									className=' text-2xl font-inter text-black'>
+									Sign In
+								</Link>
+							</SignedOut>
 						</div>
 					</div>
 				</div>

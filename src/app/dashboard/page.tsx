@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-import BarChart from "@/components/BarChart";
+// import BarChart from "@/components/BarChart";
 import Map from "@/components/Map";
 import Video from "@/components/video/Video";
 
